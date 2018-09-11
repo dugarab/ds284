@@ -1,4 +1,4 @@
-function [Q R] = gram-schmidt(A,val)
+function [Q R] = gram_schmidt(A,val)
     [~, N] = size(A);
     V = A;
     R = zeros(N);
@@ -9,7 +9,7 @@ function [Q R] = gram-schmidt(A,val)
         vi = V(:,i);
         
         for j = i+1:N
-            if(strcmpi(val,'mgs')
+            if strcmpi(val,'mgs')
                 R(i,j) = vi'*V(:,j);
             else
                 R(i,j) = vi'*A(:,j);
@@ -25,3 +25,5 @@ function [Q R] = gram-schmidt(A,val)
     Q = V;
         
 end
+
+%convince yourselves that this method actually works!

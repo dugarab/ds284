@@ -3,8 +3,8 @@ N = 100;
 [Q2, R] = qr ( rand( N ) );
 A = Q1 * diag (2.^[ -1: -1: -N] ) * Q2;
 % creating a vector of 
-[Qc, Rc] = cgs (A);
-[Qm, Rm] = mgs (A);
+[Qc, Rc] = gram_schmidt (A, 'cgs'); % classical gram schmidt
+[Qm, Rm] = gram_schmidt (A, 'mgs'); % modified gram schmidt
 
 subplot(2,1,1);
 plot([1:N], log2 ( diag (Rc)' ),[1:N] , log2(2.^[ -1: -1: -N]))
