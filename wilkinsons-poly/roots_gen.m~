@@ -9,7 +9,6 @@ a = [1 -210 20615 -1256850 53327946 -1672280820 40171771630  -756111184500  1131
 
 %a(15) = a(15)*(1 + 10^-8); 
 %you must do relative change, because the coefficents are so big, an absolute change
-%of 10^-7 will have zero effect. Analyse why?
-
+%of 10^-7 will not result in any change. Analyse why?
 roots_poly = roots(a);
 disp(roots_poly);
