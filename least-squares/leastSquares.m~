@@ -1,0 +1,17 @@
+N = 100; M = 80;
+k = 10^8; %condition number
+[Q1, ~] = qr(randn(N,N));
+Q1 = Q1(:,1:M);
+[Q2, ~] = qr(randn(M,M));
+S = k+1 : -k/(M-1) : 1;
+
+A = Q1*diag(S)*Q2;
+
+x1 = null(A');
+x1 = x1(:,1);
+b = 5.671*x1(:,1) + A(:,1)/norm(A(:,1));
+
+[Q,R] = qr(A);
+x2 = R\(Q'*b);
+x3 = inv(A'*A)*(A'*b);
+x4 
