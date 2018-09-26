@@ -5,7 +5,7 @@ a = [1 -210 20615 -1256850 53327946 -1672280820 40171771630  -756111184500  1131
 %that order.
 %Change these co-efficients by 10^-7 and see the effect on roots
 %ideally the roots turn out to be 1-20
-%maximum change is observed when you change the 16 coefficient in the array
+%maximum change is observed when you change the 16th coefficient in the array
 %a[16] = a[16] + 10^-7;
 
 roots_poly = roots(a);
